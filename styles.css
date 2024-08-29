@@ -1,0 +1,221 @@
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes gameStart {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes backgroundFlashRed {
+    0% { background-color: #c0c0c0; }
+    50% { background-color: #ff0000; }
+    100% { background-color: #c0c0c0; }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #c0c0c0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: gameStart 1s ease-in-out;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.question-text {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 20px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #6a9cfc;
+    box-shadow: 0 0 5px rgba(106, 156, 252, 0.5);
+}
+
+input[type="text"].shake {
+    animation: shake 0.5s;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-btn {
+    background-color: #6a9cfc;
+    color: white;
+}
+
+#start-btn:hover {
+    background-color: #507dfc;
+}
+
+#submit-btn {
+    background-color: #34c759;
+    color: white;
+}
+
+#submit-btn:hover {
+    background-color: #28a745;
+}
+
+button:focus {
+    outline: none;
+}
+
+.game-over-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s forwards;
+}
+
+body.game-over {
+    animation: backgroundFlashRed 0.5s;
+}
+
+.game-over-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.game-over-content h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #e74c3c;
+}
+
+.game-over-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.game-over-content button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.game-over-content button:hover {
+    background-color: #2980b9;
+}
+
+/* Pop-up Tutorial */
+.tutorial-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s forwards;
+}
+
+.tutorial-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.tutorial-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.tutorial-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+.tutorial-content button {
+    background-color: #34c759;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tutorial-content button:hover {
+    background-color: #28a745;
+}

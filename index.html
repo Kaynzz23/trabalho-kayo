@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Matemática</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Jogo de Matemática</h1>
+        <div class="stats">
+            <div id="lives">❤️ 3</div>
+            <div id="score">Pontuação: 0</div>
+        </div>
+        <div id="question" class="question-text"></div>
+        <input type="text" id="answer" placeholder="Digite sua resposta">
+        <div class="buttons">
+            <button id="start-btn">Iniciar</button>
+            <button id="submit-btn">Enviar</button>
+        </div>
+    </div>
+
+    <div id="game-over" class="game-over-overlay">
+        <div class="game-over-content">
+            <h2>Game Over</h2>
+            <p id="final-score">Sua pontuação final é: 0</p>
+            <button onclick="restartGame()">Reiniciar</button>
+        </div>
+    </div>
+
+    <div id="tutorial" class="tutorial-overlay">
+        <div class="tutorial-content">
+            <h2>Tutorial</h2>
+            <p>Bem-vindo ao jogo de matemática! O objetivo do jogo é responder corretamente às operações matemáticas que aparecem na tela. Você começa com 3 vidas, e perde uma vida a cada resposta incorreta. O jogo termina quando todas as vidas são perdidas. Boa sorte!</p>
+            <button id="close-tutorial">Fechar</button>
+        </div>
+    </div>
+
+    <button id="tutorial-btn" style="position: absolute; top: 10px; right: 10px;">?</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
